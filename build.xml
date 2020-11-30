@@ -40,9 +40,7 @@
     <path id="opdracht.list">
       <fileset dir="${temp.dir}/opdracht" includes="*.xml"/>
     </path>
-    <pathconvert property="file.list" refid="opdracht.list" dirsep="/" pathsep=";" targetos="windows">
-      <map from="${basedir}" to="file:/${basedir}"/>
-    </pathconvert>
+    <pathconvert property="file.list" refid="opdracht.list" dirsep="/" pathsep=";" targetos="windows"/>
     <xslt in="${xsl.dir}/template.xml" out="${temp.dir}/manifest.xml" style="${xsl.dir}/transformatie_op.xsl" processor="trax" force="true">
       <param name="file.list" expression="${file.list}"/>
     </xslt>
@@ -62,9 +60,7 @@
     <path id="opdracht.list">
       <fileset dir="${temp.dir}/opdracht" includes="*.xml"/>
     </path>
-    <pathconvert property="file.list" refid="opdracht.list" dirsep="/" pathsep=";" targetos="windows">
-      <map from="${basedir}" to="file:/${basedir}"/>
-    </pathconvert>
+    <pathconvert property="file.list" refid="opdracht.list" dirsep="/" pathsep=";" targetos="windows"/>
     <xslt in="${xsl.dir}/template.xml" out="${temp.dir}/manifest.xml" style="${xsl.dir}/transformatie_ow.xsl" processor="trax" force="true">
       <param name="file.list" expression="${file.list}"/>
     </xslt>
