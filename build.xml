@@ -27,7 +27,11 @@
 
   <target name="copy" description="Kopieer bestanden">
     <copy todir="${resultaat.dir}">
-      <fileset dir="${temp.dir}/opdracht"/>
+      <fileset dir="${temp.dir}/opdracht">
+        <include name="manifest.xml"/>
+        <include name="*.jpeg"/>
+        <include name="*.png"/>
+      </fileset>
     </copy>
   </target>
 
@@ -116,6 +120,6 @@
 
   <!-- totale transformatie -->
 
-  <target name="main" description="Totale transformatie" depends="init,unzip,OP,OW,GML,checksum,GIO"/>
+  <target name="main" description="Totale transformatie" depends="init,unzip,copy,OP,OW,GML,checksum,GIO"/>
 
 </project>
