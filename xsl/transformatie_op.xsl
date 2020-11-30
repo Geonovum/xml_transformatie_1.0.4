@@ -8,7 +8,7 @@
 
   <!-- waardelijsten -->
 
-  <xsl:param name="waardelijsten" select="document('waardelijsten OP 1.0.4.xml')//Waardelijst"/>
+  <xsl:param name="waardelijsten" select="document('waardelijsten_OP_1.0.4.xml')//Waardelijst"/>
 
   <!-- lijst om te bepalen in welke context elementen zitten -->
   <xsl:param name="regeling.list" select="('RegelingCompact','RegelingKlassiek','RegelingMutatie','RegelingTijdelijkdeel','RegelingVrijetekst')"/>
