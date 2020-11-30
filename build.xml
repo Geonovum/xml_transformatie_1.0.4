@@ -33,16 +33,16 @@
 
   <!-- maak parameters -->
 
-  <path id="opdracht.list">
+  <!--path id="opdracht.list">
     <fileset dir="${temp.dir}/opdracht" includes="*.xml"/>
   </path>
   <pathconvert property="file.list" refid="opdracht.list" dirsep="/" pathsep=";" targetos="windows">
     <map from="${basedir}" to="file:/${basedir}"/>
-  </pathconvert>
+  </pathconvert-->
 
   <!-- transformeer OP-bestanden -->
 
-  <target name="OP" description="Transformeer OP-bestanden">
+  <!--target name="OP" description="Transformeer OP-bestanden">
     <xslt in="${xsl.dir}/template.xml" out="${temp.dir}/manifest.xml" style="${xsl.dir}/transformatie_op.xsl" processor="trax" force="true">
       <param name="file.list" expression="${file.list}"/>
     </xslt>
@@ -54,11 +54,11 @@
         </actions>
       </call>
     </xmltask>
-  </target>
+  </target-->
 
   <!-- transformeer OW-bestanden -->
 
-  <target name="OW" description="Transformeer OW-bestanden">
+  <!--target name="OW" description="Transformeer OW-bestanden">
     <xslt in="${xsl.dir}/template.xml" out="${temp.dir}/manifest.xml" style="${xsl.dir}/transformatie_ow.xsl" processor="trax" force="true">
       <param name="file.list" expression="${file.list}"/>
     </xslt>
@@ -71,7 +71,7 @@
         </actions>
       </call>
     </xmltask>
-  </target>
+  </target-->
 
   <!-- transformeer GML-bestanden -->
 
@@ -114,6 +114,6 @@
 
   <!-- totale transformatie -->
 
-  <target name="main" description="Totale transformatie" depends="init,unzip,copy,OP,OW,GML,checksum,GIO"/>
+  <target name="main" description="Totale transformatie" depends="init,unzip,copy,GML,checksum,GIO"/>
 
 </project>
